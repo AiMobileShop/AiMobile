@@ -1,0 +1,156 @@
+/* ==========================================================================
+   COLOR SCHEME & THEME SPECIFICATIONS (LIGHT MODE DEFAULT)
+   ========================================================================== */
+
+:root {
+  --theme-bg: #f8fafc; /* slate-50 */
+  --theme-fg: #0f172a; /* slate-900 */
+  --theme-text-muted: #475569; /* slate-600 */
+  
+  /* Glassmorphism options */
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-border: rgba(226, 232, 240, 0.8);
+}
+
+/* 1. Purple Theme (Light Mode) */
+html[data-color-theme="purple"] {
+  --primary: #8b5cf6; /* purple-500 */
+  --primary-hover: #7c3aed; /* purple-600 */
+  --primary-light: rgba(139, 92, 246, 0.1);
+  --accent: #db2777; /* pink-600 */
+}
+
+/* 2. Blue Theme (Light Mode) */
+html[data-color-theme="blue"] {
+  --primary: #3b82f6; /* blue-500 */
+  --primary-hover: #2563eb; /* blue-600 */
+  --primary-light: rgba(59, 130, 246, 0.1);
+  --accent: #0891b2; /* cyan-600 */
+}
+
+/* 3. Green Theme (Light Mode) */
+html[data-color-theme="green"] {
+  --primary: #10b981; /* emerald-500 */
+  --primary-hover: #059669; /* emerald-600 */
+  --primary-light: rgba(16, 185, 129, 0.1);
+  --accent: #65a30d; /* lime-600 */
+}
+
+/* 4. Orange Theme (Light Mode) */
+html[data-color-theme="orange"] {
+  --primary: #f97316; /* orange-500 */
+  --primary-hover: #ea580c; /* orange-600 */
+  --primary-light: rgba(249, 115, 22, 0.1);
+  --accent: #eab308; /* yellow-500 */
+}
+
+/* ==========================================================================
+   DARK MODE SPECIFICATIONS
+   ========================================================================== */
+
+html.dark {
+  --theme-bg: #030712; /* slate-950 */
+  --theme-fg: #f8fafc; /* slate-50 */
+  --theme-text-muted: #94a3b8; /* slate-400 */
+  
+  --card-bg: rgba(17, 24, 39, 0.7); /* gray-900/70 */
+  --card-border: rgba(55, 65, 81, 0.4); /* gray-700/40 */
+}
+
+/* 1. Purple Theme (Dark Mode) */
+html.dark[data-color-theme="purple"] {
+  --primary: #a78bfa; /* purple-400 */
+  --primary-hover: #8b5cf6; /* purple-500 */
+  --primary-light: rgba(167, 139, 250, 0.15);
+  --accent: #f472b6; /* pink-400 */
+}
+
+/* 2. Blue Theme (Dark Mode) */
+html.dark[data-color-theme="blue"] {
+  --primary: #60a5fa; /* blue-400 */
+  --primary-hover: #3b82f6; /* blue-500 */
+  --primary-light: rgba(96, 165, 250, 0.15);
+  --accent: #22d3ee; /* cyan-400 */
+}
+
+/* 3. Green Theme (Dark Mode) */
+html.dark[data-color-theme="green"] {
+  --primary: #34d399; /* emerald-400 */
+  --primary-hover: #10b981; /* emerald-500 */
+  --primary-light: rgba(52, 211, 153, 0.15);
+  --accent: #a3e635; /* lime-400 */
+}
+
+/* 4. Orange Theme (Dark Mode) */
+html.dark[data-color-theme="orange"] {
+  --primary: #fb923c; /* orange-400 */
+  --primary-hover: #f97316; /* orange-500 */
+  --primary-light: rgba(251, 146, 60, 0.15);
+  --accent: #facc15; /* yellow-400 */
+}
+
+/* ==========================================================================
+   GLOBAL AND HELPER STYLES
+   ========================================================================== */
+
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+body {
+  background-color: var(--theme-bg);
+  color: var(--theme-fg);
+  font-family: 'Geist', 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Premium glass card effect */
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+html.dark .glass-card {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Webkit scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Image zoom transition */
+.zoom-image {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.zoom-image:hover {
+  transform: scale(1.08);
+}
