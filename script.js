@@ -368,7 +368,7 @@ function renderProducts() {
         
         <!-- Image with hover zoom -->
         <div class="relative h-48 sm:h-52 w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-900 border border-card-border mb-4 flex items-center justify-center">
-          <img src="${prod.imageUrl}" alt="${prod.name}" class="h-full w-full object-cover zoom-image" loading="lazy" />
+          <img src="${prod.imageUrl}" alt="${prod.name}" class="h-full w-full object-contain zoom-image" loading="lazy" />
           
           <!-- Stock status -->
           <span class="absolute top-3 left-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold shadow-sm ${isAvailable
@@ -468,7 +468,7 @@ function openModal(id) {
           <!-- Product image with zoom toggle -->
           <div class="space-y-3">
             <div onclick="toggleImageZoom()" class="relative h-64 sm:h-72 w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-900 border border-card-border flex items-center justify-center cursor-zoom-in">
-              <img id="modal-image" src="${prod.imageUrl}" alt="${prod.name}" class="h-full w-full object-cover transition-transform duration-300 scale-100" />
+              <img id="modal-image" src="${prod.imageUrl}" alt="${prod.name}" class="h-full w-full object-contain transition-transform duration-300 scale-100" />
               <span class="absolute bottom-3 left-3 px-2 py-0.5 rounded-md text-[9px] font-bold bg-slate-900/80 text-white backdrop-blur-sm" id="zoom-hint">
                 Click to Zoom In
               </span>
@@ -607,7 +607,7 @@ function initFeaturedSlider() {
         <!-- Image -->
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative h-64 sm:h-80 w-full overflow-hidden rounded-2xl bg-slate-800 border border-white/5">
-            <img src="${prod.imageUrl}" alt="${prod.name}" class="h-full w-full object-cover zoom-image" />
+            <img src="${prod.imageUrl}" alt="${prod.name}" class="h-full w-full object-contain zoom-image" />
           </div>
         </div>
         <!-- Copy info -->
